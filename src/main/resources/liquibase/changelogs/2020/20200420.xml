@@ -1,0 +1,55 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+	<changeSet author="tshepo" id="schema-1">
+		<!-- User -->
+		<addColumn tableName="users">
+			<column name="created_by" type="varchar(255)" defaultValue="admin">
+				<constraints nullable="false" />
+			</column>
+		</addColumn>
+		<addColumn tableName="users">
+			<column name="last_modified_by" type="varchar(255)" defaultValue="admin">
+				<constraints nullable="false" />
+			</column>
+		</addColumn>
+		<addColumn tableName="users">
+			<column name="created_date_time" type="timestamp" defaultValueComputed="CURRENT_TIMESTAMP">
+				<constraints nullable="false" />
+			</column>
+		</addColumn>
+		<addColumn tableName="users">
+			<column name="last_modified_date_time" type="timestamp" defaultValueComputed="CURRENT_TIMESTAMP">
+				<constraints nullable="false" />
+			</column>
+		</addColumn>
+
+		<!-- Role -->
+		<addColumn tableName="roles">
+			<column name="created_by" type="varchar(255)" defaultValue="admin">
+				<constraints nullable="false" />
+			</column>
+		</addColumn>
+		<addColumn tableName="roles">
+			<column name="last_modified_by" type="varchar(255)" defaultValue="admin">
+				<constraints nullable="false" />
+			</column>
+		</addColumn>
+		<addColumn tableName="roles">
+			<column name="created_date_time" type="timestamp" defaultValueComputed="CURRENT_TIMESTAMP">
+				<constraints nullable="false" />
+			</column>
+		</addColumn>
+		<addColumn tableName="roles">
+			<column name="last_modified_date_time" type="timestamp" defaultValueComputed="CURRENT_TIMESTAMP">
+				<constraints nullable="false" />
+			</column>
+		</addColumn>
+
+	</changeSet>
+
+</databaseChangeLog>

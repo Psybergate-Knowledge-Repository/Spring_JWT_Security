@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+	<include file="changelogs/root.xml" relativeToChangelogFile="true" />
+	<include file="changelogs/2020/20200228-sonar-qa.xml" relativeToChangelogFile="true" />
+	<include file="changelogs/2020/20200420.xml" relativeToChangelogFile="true" />
+
+</databaseChangeLog>
