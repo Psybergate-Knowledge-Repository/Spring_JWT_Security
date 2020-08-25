@@ -19,19 +19,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final JwtRequestFilter jwtRequestFilter;
 
-//    private final PasswordEncoder passwordEncoder;
-
-    public WebSecurityConfig(MyUserDetailsService userDetailsService, JwtRequestFilter jwtRequestFilter){//}, PasswordEncoder passwordEncoder) {
+    public WebSecurityConfig(MyUserDetailsService userDetailsService, JwtRequestFilter jwtRequestFilter){
         this.userDetailsService = userDetailsService;
         this.jwtRequestFilter = jwtRequestFilter;
-//        this.passwordEncoder = passwordEncoder;
     }
 
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService);
-        //.passwordEncoder(passwordEncoder);
     }
 
     @Override
@@ -51,9 +47,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected AuthenticationManager authenticationManager() throws Exception {
         return super.authenticationManager();
     }
-//
-//    @Bean
-//    public PasswordEncoder passwordEncoder(){
-//        return new CustomPasswordEncoder();
-//    }
 }

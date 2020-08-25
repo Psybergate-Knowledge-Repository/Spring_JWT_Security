@@ -43,7 +43,7 @@ public class UserController {
 		List<Role> roles = this.roleRepository
 				.findAllById(user.getRoles().stream().map(usr -> usr.getId()).collect(Collectors.toList()));
 
-		user.setRoles(new HashSet<>(roles != null ? roles : this.roleRepository.saveAll(user.getRoles())));
+		user.setRoles((roles != null ? roles : this.roleRepository.saveAll(user.getRoles())));
 
 		return ResponseEntity.ok(this.userRepository.save(user));
 	}

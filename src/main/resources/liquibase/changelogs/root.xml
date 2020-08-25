@@ -56,11 +56,12 @@
         </createTable>
         <addUniqueConstraint tableName="users_roles" columnNames="user_id, role_id" constraintName="uq_usersRoles_userId_roleId"/>
     </changeSet>
-    
-   <changeSet author="" id="schema-6">
-     <insert tableName="roles">
-     	<column name="role" value="ROLE_ADMIN"/>
-     </insert>
-   </changeSet>
+
+    <changeSet author="" id="schema-6">
+        <insert tableName="roles">
+            <column name="id" value="1"/>
+            <column name="role" value="ROLE_ADMIN"/>
+        </insert>
+    </changeSet>
     
 </databaseChangeLog>

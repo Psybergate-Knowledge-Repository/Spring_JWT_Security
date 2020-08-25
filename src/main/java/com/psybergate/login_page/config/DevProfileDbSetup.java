@@ -25,7 +25,7 @@ public class DevProfileDbSetup {
 			jdbcTemplate.queryForObject("select role_id from users_roles where role_id=1", Long.class);
 		} catch (DataAccessException e) {
 			jdbcTemplate.update(
-					"insert into users (version, user_name, password, active) values(0,'admin', '$2a$10$AmGJfEBsxd5Yw6/xsn3SeutywFu6BW8hLPTsBAO9mzSsSwzOapgFO', true);"
+					"insert into users (version, user_name, password, active) values(0,'admin', 'admin', true);"
 							+ " insert into roles (version, name) values (0, 'ROLE_ADMIN');"
 							+ "  insert into users_roles (version, user_id, role_id) values (0, 1, 1)");
 		}
