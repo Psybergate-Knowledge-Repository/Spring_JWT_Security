@@ -8,6 +8,8 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -26,14 +28,14 @@ public class User extends AbstractAuditedEntity<User, String> {
 	private Boolean active;
 
 	@JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.DETACH)
 	@Size(min=1,max=7)
-	private Set<Role> roles;
+	private List<Role> roles = new ArrayList<>();
 
 	public User() {
 	}
 
-	public User(String userName, String password, Boolean active, Set<Role> roles) {
+	public User(String userName, String password, Boolean active, List<Role> roles) {
 		this.userName = userName;
 		this.password = password;
 		this.active = active;
@@ -70,11 +72,11 @@ public class User extends AbstractAuditedEntity<User, String> {
 		this.active = active;
 	}
 
-	public Set<Role> getRoles() {
+	public List<Role> getRoles() {
 		return roles;
 	}
 
-	public void setRoles(Set<Role> roles) {
+	public void setRoles(List<Role> roles) {
 		this.roles = roles;
 	}
 

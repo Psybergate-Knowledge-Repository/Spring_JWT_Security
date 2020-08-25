@@ -7,5 +7,7 @@
 	<include file="changelogs/root.xml" relativeToChangelogFile="true" />
 	<include file="changelogs/2020/20200228-sonar-qa.xml" relativeToChangelogFile="true" />
 	<include file="changelogs/2020/20200420.xml" relativeToChangelogFile="true" />
+	<include file="changelogs/2020/20200823.xml" relativeToChangelogFile="true" />
+
 
 </databaseChangeLog>

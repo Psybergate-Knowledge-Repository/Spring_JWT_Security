@@ -59,7 +59,6 @@
     
    <changeSet author="" id="schema-6">
      <insert tableName="roles">
-     	<column name="id" value="1"/>
      	<column name="role" value="ROLE_ADMIN"/>
      </insert>
    </changeSet>
